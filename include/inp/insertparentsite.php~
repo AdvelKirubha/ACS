@@ -1,0 +1,20 @@
+<?php 
+
+include('../../dbconfig.php');
+
+$ElementName =$_POST['ElementName'];
+$ipaddress =$_POST['ipadd'];
+$subsite=$_POST['subsite'];
+$user =$_POST['user'];
+$site =$_POST['site'];
+$issubsie = $_POST['issubsite'];
+
+
+mysql_query("insert into sites (userID, sitename) values('$user','$site')") or die(mysql_error()); 
+mysql_query("SET @user1 = LAST_INSERT_ID()");
+
+$subid = mysql_insert_id();
+echo $subid;
+
+
+?>
